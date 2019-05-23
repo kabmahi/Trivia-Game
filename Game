@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Game {
+
+	public static void main(String args[]) {
+		System.out.println("Welcome to the trivia game!");
+		System.out.println("You will be given a trivia question and four answer choices.\nType the letter of the correct answer choice to win a point.\nIf at any moment you want to stop playing, type STOP. \nGood luck! \n \nTo start, type START and press the Enter key twice.");
+		
+		
+		Scanner userInput = new Scanner(System.in);
+		String input = userInput.nextLine();
+		if (input.equals("START")) {
+			int numTurn = 0;
+			Question q = new Question(numTurn);
+			q.print(numTurn);
+			input = userInput.nextLine();
+			q.isRightAnswer(input, numTurn);
+		}
+		
+	}
+}
